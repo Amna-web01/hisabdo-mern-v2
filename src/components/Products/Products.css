@@ -1,0 +1,251 @@
+.product-grid-wrapper {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px; /* UPDATED: Niche walay aglay section se space/gap create karne ke liye */
+}
+
+
+.product-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+
+.product-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  z-index: 2;
+}
+
+.featured-card {
+  border: 2px solid #fed700 !important; 
+  border-radius: 16px; 
+  padding: 20px 16px 16px 16px;
+  overflow: hidden;
+}
+
+
+.product-card.featured-card:hover {
+  border-color: #fed700 !important;
+}
+
+
+.card-header-title {
+  font-size: 20px;
+  color: #333e48;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+
+.save-badge {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 70px;
+  height: 70px;
+  background-color: #fed700;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.save-badge .save-text {
+  font-size: 11px;
+  color: #333;
+  font-weight: 500;
+}
+
+.save-badge .save-amount {
+  font-size: 15px;
+  font-weight: 800;
+  color: #000;
+}
+
+.featured-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin: 10px 0 15px 0;
+}
+
+.featured-card .title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0066c0;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.featured-card .price-group {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.featured-card .price-discounted {
+  font-size: 28px;
+  font-weight: 400;
+  color: #e52727;
+}
+
+.featured-card .old-price {
+  font-size: 16px;
+  color: #8c9b8c;
+  text-decoration: line-through;
+}
+
+/* Timer Section */
+.timer-container {
+  text-align: center;
+  margin-top: 0;
+}
+
+.timer-title {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.timer-boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.timer-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-box {
+  background-color: #e9e9e9;
+  width: 48px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 400;
+  color: #333;
+}
+
+.timer-separator {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 2px 14px 2px;
+}
+
+.timer-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+
+.small-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.small-card {
+  justify-content: space-between;
+}
+
+.small-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.category {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.small-card .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: none;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.price-cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-regular {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.price-discounted {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e52727;
+}
+
+.old-price {
+  font-size: 12px;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+
+.cart-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eceff1;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .cart-btn {
+  background: #fed700;
+  color: #333333;
+}

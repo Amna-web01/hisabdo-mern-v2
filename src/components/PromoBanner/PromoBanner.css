@@ -1,0 +1,43 @@
+.promo-banner-container {
+  width: 100%;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e5e7eb;
+
+  
+  margin-bottom: 40px; 
+}
+
+.promo-banner-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: #374151;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.promo-banner-title strong {
+  font-weight: 800;
+  color: #000000;
+}
+
+.promo-banner-badge {
+  background-color: #facc15;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.promo-banner-price {
+  font-size: 22px;
+  font-weight: 900;
+}

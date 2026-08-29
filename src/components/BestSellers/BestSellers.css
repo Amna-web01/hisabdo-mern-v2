@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.bestsellers-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 15px;
+  background-color: #fff;
+}
+
+/* Header Section */
+.bestsellers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333e48;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fed700;
+}
+
+.top-20-btn {
+  border: 2px solid #fed700;
+  color: #333e48;
+  padding: 4px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.top-20-btn:hover {
+  background-color: #fed700;
+}
+
+/* 3 Column Grid Layout */
+.bestsellers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Individual Card Styling */
+.bestseller-card {
+  background: #fff;
+  border-right: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding: 20px;
+  position: relative;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Hover Elevation Effect */
+.bestseller-card:hover {
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-image {
+  flex: 0 0 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.category {
+  font-size: 11px;
+  color: #878787;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.product-title {
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product-title a {
+  color: #0062bd;
+  text-decoration: none;
+}
+
+.product-title a:hover {
+  color: #333e48;
+}
+
+.card-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.current-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e62e04;
+}
+
+.old-price {
+  font-size: 12px;
+  color: #a3a3a3;
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+
+/* 1. Cart Icon Button & Yellow Hover Effect */
+.cart-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background-color: #eeeeee;
+  color: #666666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bestseller-card:hover .cart-btn {
+  background-color: #fed700;
+  color: #333e48;
+}
+
+/* 2. Wishlist & Compare Hover Reveal Animation */
+.card-hover-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 1px dashed transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.bestseller-card:hover .card-hover-actions {
+  opacity: 1;
+  visibility: visible;
+  max-height: 40px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top-color: #e0e0e0;
+}
+
+.action-link {
+  font-size: 11px;
+  color: #777;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-link:hover {
+  color: #333e48;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+  .bestsellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bestsellers-grid {
+    grid-template-columns: 1fr;
+  }
+}

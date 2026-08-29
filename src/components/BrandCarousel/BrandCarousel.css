@@ -1,0 +1,97 @@
+.brand-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto 20px auto;
+  padding: 15px 40px;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+
+/* Brand Slide Alignment */
+.brand-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Brand Text & Hover Styling */
+.brand-logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: #5b657e;
+  opacity: 0.35; /* Normal light gray color */
+  transition: all 0.3s ease;
+  user-select: none;
+  letter-spacing: -0.5px;
+}
+
+/* Hover effect: Light se Dark hona */
+.brand-item:hover .brand-logo-text {
+  opacity: 1; /* Dark text on hover */
+  color: #333333;
+}
+
+/* Custom Font Styling to match exact logo identities */
+.font-airdnd {
+  font-family: 'Arial', sans-serif;
+  font-weight: 800;
+}
+
+.font-coinbuild {
+  font-family: 'Verdana', sans-serif;
+  letter-spacing: -1px;
+}
+
+.font-dirrbble {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.font-instagirom {
+  font-family: 'Brush Script MT', cursive, sans-serif;
+  font-size: 30px;
+}
+
+.font-neetflix {
+  font-family: 'Impact', sans-serif;
+  letter-spacing: 1px;
+}
+
+.font-pincorest {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-style: italic;
+}
+
+/* Slider Left/Right Arrows */
+.brand-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #aaaaaa;
+  cursor: pointer;
+  z-index: 10;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.brand-arrow:hover {
+  color: #333333;
+}
+
+.brand-prev {
+  left: 5px;
+}
+
+.brand-next {
+  right: 5px;
+}

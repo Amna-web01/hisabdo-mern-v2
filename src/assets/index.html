@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electro — Test</title>
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/promo-banners.css">
+<link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+<!--
+  ============================================================
+  SHARED HEADER — Top Bar + Main Navbar + Departments Mega Menu
+  This block goes at the very top of <body> in every page
+  (index.html, featured-brands.html, trending-styles.html,
+  gift-cards.html) so the header looks identical everywhere.
+  Requires: css/variables.css, css/header.css, js/header.js
+  ============================================================
+-->
+
+<header class="site-header">
+
+  <!-- ===== 1. TOP BAR ===== -->
+  <div class="topbar">
+    <div class="topbar__inner container">
+      <p class="topbar__welcome">Welcome to Worldwide Electronics Store</p>
+
+      <ul class="topbar__links">
+        <li class="topbar__item">
+          <a class="topbar__link" href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Store Locator
+          </a>
+        </li>
+        <li class="topbar__item">
+          <a class="topbar__link" href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" rx="1"></rect>
+              <path d="M16 8h4l3 3v5h-7V8Z"></path>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            Track Your Order
+          </a>
+        </li>
+        <li class="topbar__item">
+          <a class="topbar__link" href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            Shop
+          </a>
+        </li>
+        <li class="topbar__item">
+          <a class="topbar__link" href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            My Account
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== 2. MAIN NAVBAR ===== -->
+  <div class="navbar">
+    <div class="navbar__inner container">
+
+      <button type="button" class="navbar__hamburger" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="index.html" class="navbar__logo">electro<span class="navbar__logo-dot">.</span></a>
+
+      <form class="navbar__search" role="search" action="#" method="get">
+        <label for="searchInput" class="sr-only">Search for Products</label>
+        <input type="search" id="searchInput" class="navbar__search-input" placeholder="Search for Products" name="q">
+
+        <label for="searchCategory" class="sr-only">Category</label>
+        <select id="searchCategory" class="navbar__search-select" name="category">
+          <option>All Categories</option>
+          <option>Computers &amp; Accessories</option>
+          <option>Cameras, Audio &amp; Video</option>
+          <option>Mobiles &amp; Tablets</option>
+          <option>TV &amp; Audio</option>
+          <option>Watches &amp; Eyewear</option>
+        </select>
+
+        <button type="submit" class="navbar__search-btn" aria-label="Search">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </form>
+
+      <ul class="navbar__actions">
+        <li class="navbar__action">
+          <a href="#" class="navbar__action-link" aria-label="Compare products">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m17 2 4 4-4 4"></path>
+              <path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+              <path d="m7 22-4-4 4-4"></path>
+              <path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+            </svg>
+            <span class="navbar__action-badge" id="compareCount">0</span>
+          </a>
+        </li>
+        <li class="navbar__action">
+          <a href="#" class="navbar__action-link" aria-label="Wishlist">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar__action">
+          <a href="#" class="navbar__action-link" aria-label="My account">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar__action navbar__action--cart">
+          <a href="#" class="navbar__action-link" aria-label="Cart">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="navbar__action-badge" id="cartCount">1</span>
+          </a>
+          <span class="navbar__cart-total" id="cartTotal">$1,347.00</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== 3. DEPARTMENTS BAR + MEGA MENU ===== -->
+  <div class="deptbar">
+    <div class="deptbar__inner container">
+
+      <button type="button" class="deptbar__toggle" id="departmentsToggle" aria-expanded="false" aria-controls="departmentsMenu">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        All Departments
+      </button>
+
+      <nav class="deptbar__nav" aria-label="Primary">
+        <ul class="deptbar__links">
+          <li class="deptbar__item deptbar__item--has-dropdown">
+            <a href="#" class="deptbar__link deptbar__link--active">
+              All Pages
+              <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+          </li>
+          <li class="deptbar__item"><a href="pages/featured-brands.html" class="deptbar__link">Featured Brands</a></li>
+          <li class="deptbar__item"><a href="pages/trending-styles.html" class="deptbar__link">Trending Styles</a></li>
+          <li class="deptbar__item"><a href="pages/gift-cards.html" class="deptbar__link">Gift Cards</a></li>
+        </ul>
+      </nav>
+
+      <p class="deptbar__shipping">Free Shipping on Orders $50+</p>
+    </div>
+
+    <!-- Mega menu panel: toggled open/closed by js/header.js -->
+    <div class="mega-menu" id="departmentsMenu" hidden>
+      <ul class="mega-menu__list">
+        <li class="mega-menu__item mega-menu__item--bold"><a href="#">Value of the Day</a></li>
+        <li class="mega-menu__item mega-menu__item--bold"><a href="#">Top 100 Offers</a></li>
+        <li class="mega-menu__item mega-menu__item--bold"><a href="#">New Arrivals</a></li>
+
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Computers &amp; Accessories</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Cameras, Audio &amp; Video</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Mobiles &amp; Tablets</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Movies, Music &amp; Video Games</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">TV &amp; Audio</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Watches &amp; Eyewear</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Car, Motorbike &amp; Industrial</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Accessories</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Mobile slide-out menu (hamburger from navbar) -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" hidden>
+    <ul class="mobile-menu__links">
+      <li><a href="#">All Pages</a></li>
+      <li><a href="pages/featured-brands.html">Featured Brands</a></li>
+      <li><a href="pages/trending-styles.html">Trending Styles</a></li>
+      <li><a href="pages/gift-cards.html">Gift Cards</a></li>
+    </ul>
+    <hr class="mobile-menu__divider">
+    <ul class="mobile-menu__links">
+      <li><a href="#">Store Locator</a></li>
+      <li><a href="#">Track Your Order</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">My Account</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<!--
+  ============================================================
+  HOMEPAGE — Hero Slider
+  Goes directly after the closing </header> tag.
+  Requires: css/hero.css, js/hero-slider.js
+  ============================================================
+-->
+
+<section class="hero" aria-roledescription="carousel" aria-label="Featured promotions">
+
+  <div class="hero__track" id="heroTrack">
+
+    <!-- Slide 1 -->
+    <article class="hero__slide is-active" aria-hidden="false">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Shop To Get What You Love</p>
+          <h1 class="hero__title">Timepieces That<br>Make A Statement</h1>
+          <p class="hero__subtitle">Up to <strong>40% off</strong></p>
+          <a href="#" class="btn btn--primary hero__cta">Start Buying</a>
+        </div>
+
+        <div class="hero__media" aria-hidden="true">
+          <svg viewBox="0 0 420 420" class="hero__illustration">
+            <rect x="40" y="60" width="180" height="320" rx="28" fill="url(#heroGradTeal)"></rect>
+            <rect x="170" y="30" width="190" height="360" rx="30" fill="#101418"></rect>
+            <rect x="182" y="54" width="166" height="312" rx="6" fill="url(#heroGradScreen)"></rect>
+            <circle cx="265" cy="70" r="4" fill="#2a2f36"></circle>
+            <text x="265" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" fill="#ffffff" font-weight="700">12:45</text>
+            <text x="265" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#dbe9ff">Sun, 1 March</text>
+            <defs>
+              <linearGradient id="heroGradTeal" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#5ee7d4"></stop>
+                <stop offset="1" stop-color="#1fb6a8"></stop>
+              </linearGradient>
+              <linearGradient id="heroGradScreen" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#6f7bf7"></stop>
+                <stop offset="1" stop-color="#c86dd7"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 2 -->
+    <article class="hero__slide" aria-hidden="true">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">New Season Arrivals</p>
+          <h1 class="hero__title">Laptops Built<br>For Every Workflow</h1>
+          <p class="hero__subtitle">Starting at <strong>$699</strong></p>
+          <a href="#" class="btn btn--primary hero__cta">Shop Laptops</a>
+        </div>
+
+        <div class="hero__media" aria-hidden="true">
+          <svg viewBox="0 0 420 420" class="hero__illustration">
+            <rect x="60" y="90" width="300" height="190" rx="10" fill="#101418"></rect>
+            <rect x="76" y="106" width="268" height="158" rx="4" fill="url(#heroGradScreen2)"></rect>
+            <path d="M40 290 h340 l-20 30 h-300 Z" fill="#2a2f36"></path>
+            <defs>
+              <linearGradient id="heroGradScreen2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffb648"></stop>
+                <stop offset="1" stop-color="#ff7a59"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 3 -->
+    <article class="hero__slide" aria-hidden="true">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Sound That Moves You</p>
+          <h1 class="hero__title">Wireless Audio<br>For Every Room</h1>
+          <p class="hero__subtitle">Up to <strong>30% off</strong></p>
+          <a href="#" class="btn btn--primary hero__cta">Explore Audio</a>
+        </div>
+
+        <div class="hero__media" aria-hidden="true">
+          <svg viewBox="0 0 420 420" class="hero__illustration">
+            <ellipse cx="210" cy="230" rx="90" ry="120" fill="url(#heroGradSpeaker)"></ellipse>
+            <circle cx="210" cy="200" r="46" fill="#101418" opacity="0.15"></circle>
+            <circle cx="210" cy="200" r="46" fill="none" stroke="#101418" stroke-width="4" opacity="0.35"></circle>
+            <rect x="180" y="330" width="60" height="14" rx="7" fill="#101418" opacity="0.25"></rect>
+            <defs>
+              <linearGradient id="heroGradSpeaker" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f7f9fb"></stop>
+                <stop offset="1" stop-color="#c9d3dc"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="hero__dots" id="heroDots" role="tablist" aria-label="Choose promotion">
+    <button type="button" class="hero__dot is-active" role="tab" aria-selected="true" aria-label="Promotion 1"></button>
+    <button type="button" class="hero__dot" role="tab" aria-selected="false" aria-label="Promotion 2"></button>
+    <button type="button" class="hero__dot" role="tab" aria-selected="false" aria-label="Promotion 3"></button>
+  </div>
+
+</section>
+
+<!--
+  ============================================================
+  HOMEPAGE — Promo Banners (3-column deal strip)
+  Goes directly after the closing </section> of the hero.
+  Requires: css/promo-banners.css
+  ============================================================
+-->
+
+<section class="promo-banners">
+  <div class="container promo-banners__grid">
+
+    <article class="promo-card">
+      <div class="promo-card__media" aria-hidden="true">
+        <svg viewBox="0 0 120 120" class="promo-card__illustration">
+          <rect x="20" y="42" width="70" height="46" rx="8" fill="#e7e9ec"></rect>
+          <rect x="30" y="30" width="26" height="16" rx="4" fill="#e7e9ec"></rect>
+          <circle cx="55" cy="66" r="18" fill="#c7cdd3"></circle>
+          <circle cx="55" cy="66" r="11" fill="#9aa3ab"></circle>
+          <circle cx="78" cy="52" r="4" fill="#c7cdd3"></circle>
+        </svg>
+      </div>
+      <div class="promo-card__body">
+        <p class="promo-card__title">Catch Big <strong>Deals</strong> On The Cameras</p>
+        <a href="#" class="promo-card__link">
+          Shop now
+          <span class="promo-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </a>
+      </div>
+    </article>
+
+    <article class="promo-card">
+      <div class="promo-card__media" aria-hidden="true">
+        <svg viewBox="0 0 120 120" class="promo-card__illustration">
+          <rect x="18" y="26" width="52" height="70" rx="6" fill="#e7e9ec"></rect>
+          <rect x="26" y="34" width="36" height="48" fill="#c7cdd3"></rect>
+          <rect x="46" y="50" width="58" height="40" rx="4" fill="#9aa3ab"></rect>
+          <rect x="52" y="56" width="46" height="28" fill="#c7cdd3"></rect>
+        </svg>
+      </div>
+      <div class="promo-card__body">
+        <p class="promo-card__title">Tablets, <strong>Smartphones</strong> And More</p>
+        <a href="#" class="promo-card__link promo-card__link--percent">
+          Up to <strong>70%</strong>
+          <span class="promo-card__arrow promo-card__arrow--filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </a>
+      </div>
+    </article>
+
+    <article class="promo-card">
+      <div class="promo-card__media" aria-hidden="true">
+        <svg viewBox="0 0 120 120" class="promo-card__illustration">
+          <rect x="16" y="24" width="60" height="42" rx="4" fill="#e7e9ec"></rect>
+          <rect x="42" y="66" width="8" height="12" fill="#c7cdd3"></rect>
+          <rect x="30" y="78" width="32" height="6" rx="3" fill="#9aa3ab"></rect>
+          <rect x="66" y="40" width="38" height="52" rx="4" fill="#c7cdd3"></rect>
+          <rect x="72" y="46" width="26" height="34" fill="#9aa3ab"></rect>
+        </svg>
+      </div>
+      <div class="promo-card__body">
+        <p class="promo-card__title">Shop The <strong>Hottest</strong> Products</p>
+        <a href="#" class="promo-card__link">
+          Shop now
+          <span class="promo-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!--
+  ============================================================
+  HOMEPAGE — Special Offer + Product Tabs
+  Goes directly after the closing </section> of promo-banners.
+  Requires: css/products.css, js/product-tabs.js
+
+  NOTE: product illustrations are inline SVG placeholders —
+  swap the <svg>...</svg> block inside each .product-card__media
+  (or .special-offer__media) with a real <img> tag later if
+  you'd rather use photography instead.
+  ============================================================
+-->
+
+<section class="featured-products">
+  <div class="container featured-products__layout">
+
+    <!-- ===== Special Offer card ===== -->
+    <aside class="special-offer">
+      <div class="special-offer__top">
+        <p class="special-offer__label">Special Offer</p>
+        <span class="special-offer__badge">Save $9.00</span>
+      </div>
+
+      <div class="special-offer__media" aria-hidden="true">
+        <svg viewBox="0 0 200 160" class="special-offer__illustration">
+          <rect x="20" y="55" width="160" height="70" rx="26" fill="#e7e9ec"></rect>
+          <circle cx="60" cy="90" r="14" fill="#c7cdd3"></circle>
+          <circle cx="140" cy="90" r="14" fill="#c7cdd3"></circle>
+          <rect x="92" y="80" width="16" height="20" rx="4" fill="#9aa3ab"></rect>
+          <circle cx="150" cy="70" r="5" fill="#9aa3ab"></circle>
+          <circle cx="165" cy="80" r="5" fill="#9aa3ab"></circle>
+        </svg>
+      </div>
+
+      <a href="#" class="special-offer__title">Game Console Controller + USB 3.0 Cable</a>
+    </aside>
+
+    <!-- ===== Product Tabs ===== -->
+    <div class="product-tabs">
+
+      <div class="product-tabs__nav" role="tablist" aria-label="Product lists">
+        <button type="button" class="product-tabs__btn is-active" role="tab" aria-selected="true" data-tab="featured">Featured</button>
+        <button type="button" class="product-tabs__btn" role="tab" aria-selected="false" data-tab="sale">On Sale</button>
+        <button type="button" class="product-tabs__btn" role="tab" aria-selected="false" data-tab="top-rated">Top Rated</button>
+      </div>
+
+      <div class="product-tabs__panels">
+
+        <!-- Featured panel -->
+        <div class="product-grid is-active" data-panel="featured">
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <ellipse cx="80" cy="90" rx="34" ry="46" fill="url(#pcSpeaker)"></ellipse>
+                <circle cx="80" cy="78" r="18" fill="#101418" opacity="0.12"></circle>
+                <defs><linearGradient id="pcSpeaker" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f9fb"></stop><stop offset="1" stop-color="#c9d3dc"></stop></linearGradient></defs>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Audio Speakers, TV &amp; Audio</p>
+            <a href="#" class="product-card__title">Wireless Audio System Multiroom 360</a>
+            <div class="product-card__footer">
+              <p class="product-card__price"><span class="product-card__price-current">$2,299.00</span></p>
+              <button type="button" class="product-card__cart-btn" aria-label="Add Wireless Audio System Multiroom 360 to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <rect x="34" y="26" width="92" height="118" rx="10" fill="#101418"></rect>
+                <rect x="44" y="42" width="72" height="86" fill="url(#pcTablet)"></rect>
+                <rect x="66" y="132" width="28" height="4" rx="2" fill="#2a2f36"></rect>
+                <defs><linearGradient id="pcTablet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a65"></stop><stop offset="1" stop-color="#e64a19"></stop></linearGradient></defs>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Laptops, Laptops &amp; Computers</p>
+            <a href="#" class="product-card__title">Tablet Red EliteBook Revolve 810 G2</a>
+            <div class="product-card__footer">
+              <p class="product-card__price">
+                <span class="product-card__price-current product-card__price-current--sale">$2,100.00</span>
+                <span class="product-card__price-old">$2,299.00</span>
+              </p>
+              <button type="button" class="product-card__cart-btn" aria-label="Add Tablet Red EliteBook Revolve 810 G2 to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <path d="M40 60 h55 l14 -14 h20 v70 h-89 Z" fill="url(#pcCam)"></path>
+                <circle cx="82" cy="96" r="20" fill="#101418" opacity="0.75"></circle>
+                <circle cx="82" cy="96" r="12" fill="#3a3f47"></circle>
+                <defs><linearGradient id="pcCam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ba68c8"></stop><stop offset="1" stop-color="#6a1b9a"></stop></linearGradient></defs>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Cameras, Cameras &amp; Photography</p>
+            <a href="#" class="product-card__title">Purple NX Mini F1 Camera SMART NX</a>
+            <div class="product-card__footer">
+              <p class="product-card__price"><span class="product-card__price-current">$540.00</span></p>
+              <button type="button" class="product-card__cart-btn" aria-label="Add Purple NX Mini F1 Camera to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- On Sale panel -->
+        <div class="product-grid" data-panel="sale" hidden>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <rect x="30" y="20" width="100" height="120" rx="16" fill="#101418"></rect>
+                <rect x="38" y="34" width="84" height="92" rx="4" fill="url(#pcPhone)"></rect>
+                <circle cx="80" cy="26" r="2.5" fill="#2a2f36"></circle>
+                <defs><linearGradient id="pcPhone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e53935"></stop><stop offset="1" stop-color="#8e0000"></stop></linearGradient></defs>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Smart Phones &amp; Tablets</p>
+            <a href="#" class="product-card__title">Smartphone 6S 32GB LTE</a>
+            <div class="product-card__footer">
+              <p class="product-card__price">
+                <span class="product-card__price-current product-card__price-current--sale">$750.00</span>
+                <span class="product-card__price-old">$780.00</span>
+              </p>
+              <button type="button" class="product-card__cart-btn" aria-label="Add Smartphone 6S 32GB LTE to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <rect x="20" y="50" width="120" height="10" rx="5" fill="#9aa3ab"></rect>
+                <rect x="24" y="60" width="18" height="50" rx="4" fill="#101418"></rect>
+                <rect x="118" y="60" width="18" height="50" rx="4" fill="#101418"></rect>
+                <circle cx="80" cy="80" r="26" fill="none" stroke="#101418" stroke-width="6"></circle>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Accessories, Headphones</p>
+            <a href="#" class="product-card__title">White Solo 2 Wireless Headphones</a>
+            <div class="product-card__footer">
+              <p class="product-card__price">
+                <span class="product-card__price-current product-card__price-current--sale">$199.00</span>
+                <span class="product-card__price-old">$248.99</span>
+              </p>
+              <button type="button" class="product-card__cart-btn" aria-label="Add White Solo 2 Wireless Headphones to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <rect x="30" y="60" width="100" height="60" rx="6" fill="url(#pcPrinter)"></rect>
+                <rect x="46" y="40" width="68" height="24" rx="4" fill="#c7cdd3"></rect>
+                <rect x="50" y="96" width="60" height="30" fill="#f7f9fb" stroke="#c7cdd3" stroke-width="2"></rect>
+                <defs><linearGradient id="pcPrinter" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#78909c"></stop><stop offset="1" stop-color="#455a64"></stop></linearGradient></defs>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Printers, Printers &amp; Ink</p>
+            <a href="#" class="product-card__title">Full Color LaserJet Pro M452dn</a>
+            <div class="product-card__footer">
+              <p class="product-card__price">
+                <span class="product-card__price-current product-card__price-current--sale">$950.00</span>
+                <span class="product-card__price-old">$1,050.00</span>
+              </p>
+              <button type="button" class="product-card__cart-btn" aria-label="Add Full Color LaserJet Pro M452dn to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Top Rated panel -->
+        <div class="product-grid" data-panel="top-rated" hidden>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <rect x="24" y="46" width="112" height="70" rx="8" fill="#101418"></rect>
+                <rect x="32" y="54" width="96" height="54" fill="url(#pcTv)"></rect>
+                <rect x="70" y="116" width="20" height="14" fill="#2a2f36"></rect>
+                <rect x="52" y="128" width="56" height="6" rx="3" fill="#101418"></rect>
+                <defs><linearGradient id="pcTv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4dd0e1"></stop><stop offset="1" stop-color="#00838f"></stop></linearGradient></defs>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Home Entertainment, TVs</p>
+            <a href="#" class="product-card__title">Widescreen 4K SUHD TV</a>
+            <div class="product-card__footer">
+              <div>
+                <p class="product-card__rating" aria-label="Rated 5 out of 5">★★★★★</p>
+                <p class="product-card__price"><span class="product-card__price-current">$1,999.00</span></p>
+              </div>
+              <button type="button" class="product-card__cart-btn" aria-label="Add Widescreen 4K SUHD TV to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <rect x="30" y="30" width="100" height="66" rx="6" fill="#101418"></rect>
+                <rect x="38" y="38" width="84" height="50" fill="url(#pcLaptop2)"></rect>
+                <path d="M18 100 h124 l-10 14 h-104 Z" fill="#2a2f36"></path>
+                <defs><linearGradient id="pcLaptop2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7e57c2"></stop><stop offset="1" stop-color="#311b92"></stop></linearGradient></defs>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Laptops &amp; Computers</p>
+            <a href="#" class="product-card__title">MF841HN/A 13-inch Laptop</a>
+            <div class="product-card__footer">
+              <div>
+                <p class="product-card__rating" aria-label="Rated 5 out of 5">★★★★★</p>
+                <p class="product-card__price">
+                  <span class="product-card__price-current product-card__price-current--sale">$1,500.00</span>
+                  <span class="product-card__price-old">$1,800.00</span>
+                </p>
+              </div>
+              <button type="button" class="product-card__cart-btn" aria-label="Add MF841HN/A 13-inch Laptop to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <svg viewBox="0 0 160 160" class="product-card__illustration" aria-hidden="true">
+                <rect x="44" y="20" width="72" height="120" rx="14" fill="#101418"></rect>
+                <rect x="52" y="34" width="56" height="92" rx="4" fill="url(#pcPhone2)"></rect>
+                <defs><linearGradient id="pcPhone2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26c6da"></stop><stop offset="1" stop-color="#00695c"></stop></linearGradient></defs>
+              </svg>
+              <div class="product-card__hover-actions">
+                <button type="button" class="product-card__icon-btn" aria-label="Add to wishlist">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path></svg>
+                </button>
+                <button type="button" class="product-card__icon-btn" aria-label="Compare">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg>
+                </button>
+              </div>
+            </div>
+            <p class="product-card__category">Smart Phones &amp; Tablets</p>
+            <a href="#" class="product-card__title">Tablet Thin EliteBook Revolve 810 G6</a>
+            <div class="product-card__footer">
+              <div>
+                <p class="product-card__rating" aria-label="Rated 4 out of 5">★★★★☆</p>
+                <p class="product-card__price"><span class="product-card__price-current">$1,300.00</span></p>
+              </div>
+              <button type="button" class="product-card__cart-btn" aria-label="Add Tablet Thin EliteBook Revolve 810 G6 to cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<div style="height:300px;background:#fafafa;display:flex;align-items:center;justify-content:center;color:#999;font-family:sans-serif;">
+  (Baaki page yahan aayega — carousel, footer)
+</div>
+
+<script src="js/header.js"></script>
+<script src="js/hero-slider.js"></script>
+<script src="js/product-tabs.js"></script>
+</body>
+</html>

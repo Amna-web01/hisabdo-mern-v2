@@ -1,0 +1,369 @@
+/* ================= GLOBAL / CONTAINER ================= */
+.site-header {
+  width: 100%;
+  background-color: #ffffff;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.site-header *,
+.site-header *::before,
+.site-header *::after {
+  box-sizing: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ================= 1. TOP BAR ================= */
+.topbar {
+  border-bottom: 1px solid #eeeeee;
+  background-color: #ffffff;
+}
+
+.topbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.topbar__welcome {
+  margin: 0;
+  font-size: 13px;
+  color: #666666;
+}
+
+.topbar__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar__item {
+  position: relative;
+}
+
+.topbar__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 12px;
+  background-color: #dddddd;
+}
+
+.topbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* ================= 2. MAIN NAVBAR (ELECTRO ROW) ================= */
+.navbar {
+  padding: 16px 0;
+  background-color: #ffffff;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.navbar__hamburger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.navbar__logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #333333;
+  text-decoration: none;
+  line-height: 1;
+  margin-right: auto;
+}
+
+.navbar__logo-dot {
+  color: #fed700;
+}
+
+.navbar__search {
+  display: flex;
+  flex: 1;
+  max-width: 580px;
+  height: 44px;
+  border: 2px solid #fed700;
+  border-radius: 22px;
+  overflow: hidden;
+  background-color: #ffffff;
+  margin-right: 15px;
+}
+
+.navbar__search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.navbar__search-input::placeholder {
+  color: #888888;
+}
+
+.navbar__search-select {
+  border: none;
+  border-left: 1px solid #eeeeee;
+  outline: none;
+  padding: 0 14px;
+  font-size: 13px;
+  color: #555555;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.navbar__search-btn {
+  background-color: #fed700;
+  border: none;
+  padding: 0 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__action-link {
+  position: relative;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar__action-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #fed700;
+  color: #333333;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__cart-total {
+  font-weight: 700;
+  margin-left: 12px;
+  font-size: 14px;
+}
+
+/* ================= 3. DEPARTMENTS BAR & DROPDOWN ================= */
+.deptbar {
+  position: relative;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  background-color: #ffffff;
+}
+
+.deptbar__inner {
+  display: flex;
+  align-items: center;
+  height: 52px;
+  justify-content: space-between;
+}
+
+/* All Departments Button - Centered Text */
+.deptbar__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #fed700;
+  border: none;
+  height: 100%;
+  width: 270px;
+  padding: 0 20px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #000000;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.deptbar__nav {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  flex: 1;
+}
+
+.deptbar__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deptbar__link {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.deptbar__link--active {
+  color: #e52727;
+}
+
+.deptbar__shipping {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 14px;
+  color: #333333;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/* ================= 4. MEGA MENU DROPDOWN (STATIC POSITION) ================= */
+.mega-menu {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: absolute;
+  top: 100%;
+  left: 15px;
+  width: 270px;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  margin-top: 0;
+  padding: 12px 0;
+  z-index: 9999;
+}
+
+.mega-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mega-menu__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.mega-menu__item a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.mega-menu__item:hover,
+.mega-menu__item.active {
+  background-color: #f8f9fa;
+  color: #e52727;
+}
+
+.mega-menu__item--bold {
+  font-weight: 700;
+}
+
+/* Mobile Menu Fallback */
+.mobile-menu {
+  background-color: #ffffff;
+  padding: 15px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.mobile-menu__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu__links li a {
+  display: block;
+  padding: 8px 0;
+  color: #333333;
+  text-decoration: none;
+}
+
+.mobile-menu__divider {
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  margin: 10px 0;
+}
+
+/* Utility Helpers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.icon--sm {
+  width: 14px;
+  height: 14px;
+}

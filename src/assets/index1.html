@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electro — Test</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/promo-banners.css">
+<link rel="stylesheet" href="css/products.css">
+<link rel="stylesheet" href="css/product-card.css">
+<link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+<body>
+<!--
+  ============================================================
+  SHARED HEADER — Top Bar + Main Navbar + Departments Mega Menu
+  This block goes at the very top of <body> in every page
+  (index.html, featured-brands.html, trending-styles.html,
+  gift-cards.html) so the header looks identical everywhere.
+  Requires: css/variables.css, css/header.css, js/header.js
+  ============================================================
+-->
+
+<header class="site-header">
+
+  <!-- ===== 1. TOP BAR ===== -->
+  <div class="topbar">
+    <div class="topbar__inner container">
+      <p class="topbar__welcome">Welcome to Worldwide Electronics Store</p>
+
+      <ul class="topbar__links">
+        <li class="topbar__item">
+          <a class="topbar__link" href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Store Locator
+          </a>
+        </li>
+        <li class="topbar__item">
+          <a class="topbar__link" href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" rx="1"></rect>
+              <path d="M16 8h4l3 3v5h-7V8Z"></path>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            Track Your Order
+          </a>
+        </li>
+        <li class="topbar__item">
+          <a class="topbar__link" href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            Shop
+          </a>
+        </li>
+        <li class="topbar__item">
+          <a class="topbar__link" href="#">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            My Account
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== 2. MAIN NAVBAR ===== -->
+  <div class="navbar">
+    <div class="navbar__inner container">
+
+      <button type="button" class="navbar__hamburger" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="index.html" class="navbar__logo">electro<span class="navbar__logo-dot">.</span></a>
+
+      <form class="navbar__search" role="search" action="#" method="get">
+        <label for="searchInput" class="sr-only">Search for Products</label>
+        <input type="search" id="searchInput" class="navbar__search-input" placeholder="Search for Products" name="q">
+
+        <label for="searchCategory" class="sr-only">Category</label>
+        <select id="searchCategory" class="navbar__search-select" name="category">
+          <option>All Categories</option>
+          <option>Computers &amp; Accessories</option>
+          <option>Cameras, Audio &amp; Video</option>
+          <option>Mobiles &amp; Tablets</option>
+          <option>TV &amp; Audio</option>
+          <option>Watches &amp; Eyewear</option>
+        </select>
+
+        <button type="submit" class="navbar__search-btn" aria-label="Search">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </form>
+
+      <ul class="navbar__actions">
+        <li class="navbar__action">
+          <a href="#" class="navbar__action-link" aria-label="Compare products">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m17 2 4 4-4 4"></path>
+              <path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+              <path d="m7 22-4-4 4-4"></path>
+              <path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+            </svg>
+            <span class="navbar__action-badge" id="compareCount">0</span>
+          </a>
+        </li>
+        <li class="navbar__action">
+          <a href="#" class="navbar__action-link" aria-label="Wishlist">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"></path>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar__action">
+          <a href="#" class="navbar__action-link" aria-label="My account">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar__action navbar__action--cart">
+          <a href="#" class="navbar__action-link" aria-label="Cart">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+              <path d="M3 6h18"></path>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="navbar__action-badge" id="cartCount">1</span>
+          </a>
+          <span class="navbar__cart-total" id="cartTotal">$1,347.00</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== 3. DEPARTMENTS BAR + MEGA MENU ===== -->
+  <div class="deptbar">
+    <div class="deptbar__inner container">
+
+      <button type="button" class="deptbar__toggle" id="departmentsToggle" aria-expanded="false" aria-controls="departmentsMenu">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        All Departments
+      </button>
+
+      <nav class="deptbar__nav" aria-label="Primary">
+        <ul class="deptbar__links">
+          <li class="deptbar__item deptbar__item--has-dropdown">
+            <a href="#" class="deptbar__link deptbar__link--active">
+              All Pages
+              <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+          </li>
+          <li class="deptbar__item"><a href="pages/featured-brands.html" class="deptbar__link">Featured Brands</a></li>
+          <li class="deptbar__item"><a href="pages/trending-styles.html" class="deptbar__link">Trending Styles</a></li>
+          <li class="deptbar__item"><a href="pages/gift-cards.html" class="deptbar__link">Gift Cards</a></li>
+        </ul>
+      </nav>
+
+      <p class="deptbar__shipping">Free Shipping on Orders $50+</p>
+    </div>
+
+    <!-- Mega menu panel: toggled open/closed by js/header.js -->
+    <div class="mega-menu" id="departmentsMenu" hidden>
+      <ul class="mega-menu__list">
+        <li class="mega-menu__item mega-menu__item--bold"><a href="#">Value of the Day</a></li>
+        <li class="mega-menu__item mega-menu__item--bold"><a href="#">Top 100 Offers</a></li>
+        <li class="mega-menu__item mega-menu__item--bold"><a href="#">New Arrivals</a></li>
+
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Computers &amp; Accessories</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Cameras, Audio &amp; Video</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Mobiles &amp; Tablets</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Movies, Music &amp; Video Games</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">TV &amp; Audio</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Watches &amp; Eyewear</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Car, Motorbike &amp; Industrial</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+        <li class="mega-menu__item mega-menu__item--has-sub">
+          <a href="#">Accessories</a>
+          <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Mobile slide-out menu (hamburger from navbar) -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile" hidden>
+    <ul class="mobile-menu__links">
+      <li><a href="#">All Pages</a></li>
+      <li><a href="pages/featured-brands.html">Featured Brands</a></li>
+      <li><a href="pages/trending-styles.html">Trending Styles</a></li>
+      <li><a href="pages/gift-cards.html">Gift Cards</a></li>
+    </ul>
+    <hr class="mobile-menu__divider">
+    <ul class="mobile-menu__links">
+      <li><a href="#">Store Locator</a></li>
+      <li><a href="#">Track Your Order</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">My Account</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<!--
+  ============================================================
+  HOMEPAGE — Hero Slider
+  Goes directly after the closing </header> tag.
+  Requires: css/hero.css, js/hero-slider.js
+  ============================================================
+-->
+<div class="hero-container">
+  
+  <div class="sidebar-spacer"></div>
+
+  <div class="slider-area">
+
+    <!-- SLIDE 1 -->
+    <div class="slide active">
+      <div class="slide-content">
+        <div class="sub-title">Shop To Get What You Love</div>
+        <h1 class="main-title">Timepieces That Make A Statement<br>Up To <strong>40% OFF</strong></h1>
+        <a href="#" class="btn-buy">Start Buying</a>
+      </div>
+      <div class="slide-image">
+        <img src="33.webp" alt="Smartphones">
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide">
+      <div class="slide-content">
+        <div class="sub-title">Under Favorable Smartwatches</div>
+        <h1 class="main-title">The New<br><strong>Standard</strong></h1>
+        <div class="price-amount">FROM $749<sup>99</sup></div>
+        <a href="#" class="btn-buy">Start Buying</a>
+      </div>
+      <div class="slide-image">
+        <img src="11.webp" alt="Smartwatches">
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide">
+      <div class="slide-content">
+        <div class="sub-title">Shop To Get What You Love</div>
+        <h1 class="main-title">Timepieces That Make A Statement<br>Up To <strong>40% OFF</strong></h1>
+        <a href="#" class="btn-buy">Start Buying</a>
+      </div>
+      <div class="slide-image">
+        <img src="22.webp" alt="Audio Speaker">
+      </div>
+    </div>
+
+    <!-- Dots Pagination -->
+    <div class="slider-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  </div>
+
+</div>
+
+<!--
+  ============================================================
+  HOMEPAGE — Promo Banners (3-column deal strip)
+  Goes directly after the closing </section> of the hero.
+  Requires: css/promo-banners.css
+  ============================================================
+-->
+
+<section class="promo-banners">
+  <div class="container promo-banners__grid">
+
+    <article class="promo-card">
+      <div class="promo-card__media" aria-hidden="true">
+        <img src="download.jpg" alt="Hero Image">
+      </div>
+      <div class="promo-card__body">
+        <p class="promo-card__title">Catch Big <strong>Deals</strong> On The Cameras</p>
+        <a href="#" class="promo-card__link">
+          Shop now
+          <span class="promo-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </a>
+      </div>
+    </article>
+
+    <article class="promo-card">
+      <div class="promo-card__media" aria-hidden="true">
+        <img src="download (1).jpg" alt="Hero Image">
+      </div>
+      <div class="promo-card__body">
+        <p class="promo-card__title">Tablets, <strong>Smartphones</strong> And More</p>
+        <a href="#" class="promo-card__link promo-card__link--percent">
+          Up to <strong>70%</strong>
+          <span class="promo-card__arrow promo-card__arrow--filled" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </a>
+      </div>
+    </article>
+
+    <article class="promo-card">
+      <div class="promo-card__media" aria-hidden="true">
+        <img src="download (2).jpg" alt="Hero Image">
+      </div>
+      <div class="promo-card__body">
+        <p class="promo-card__title">Shop The <strong>Hottest</strong> Products</p>
+        <a href="#" class="promo-card__link">
+          Shop now
+          <span class="promo-card__arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </span>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+  
+
+<div class="product-grid-wrapper">
+
+    <!-- 1. LEFT SIDE: Special Offer Console Product -->
+    <div class="product-card featured-card">
+      
+      <!-- Special Offer Heading -->
+      <div class="card-header-title">Special Offer</div>
+
+      <!-- Save $9.00 Round Badge -->
+      <div class="save-badge">
+        <span class="save-text">Save</span>
+        <span class="save-amount">$9.00</span>
+      </div>
+
+      <!-- Image -->
+      <img src="2.webp" alt="Game Console Controller">
+
+      <!-- Title -->
+      <a href="#" class="title">Game Console Controller + USB 3.0 Cable</a>
+
+      <!-- Red Price -->
+      <div class="price-group">
+        <span class="price-discounted">$90.00</span>
+        <span class="old-price">$99.00</span>
+      </div>
+
+      <!-- Live Counter (Gap reduced) -->
+      <div class="timer-container">
+        <div class="timer-title">Hurry Up! Offer ends in:</div>
+        <div class="timer-boxes">
+          
+          <div class="timer-box-wrapper">
+            <div class="timer-box" id="hours">7</div>
+            <span class="timer-label">HOURS</span>
+          </div>
+
+          <span class="timer-separator">:</span>
+
+          <div class="timer-box-wrapper">
+            <div class="timer-box" id="mins">17</div>
+            <span class="timer-label">MINS</span>
+          </div>
+
+          <span class="timer-separator">:</span>
+
+          <div class="timer-box-wrapper">
+            <div class="timer-box" id="secs">28</div>
+            <span class="timer-label">SECS</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2. RIGHT SIDE: 6 Small Products Grid -->
+    <div class="small-products-grid">
+
+      <!-- Product 1 (Black Price) -->
+      <div class="product-card small-card">
+        <img src="3.webp" alt="Audio System">
+        <div class="category">Audio Speakers, TV & Audio</div>
+        <a href="#" class="title">Wireless Audio System Multiroom 360</a>
+        <div class="price-cart-row">
+          <span class="price-regular">$2,299.00</span>
+          <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+
+      <!-- Product 2 (Red Discounted Price) -->
+      <div class="product-card small-card">
+        <img src="4.webp" alt="Tablet">
+        <div class="category">Laptops, Laptops & Computers</div>
+        <a href="#" class="title">Tablet Red EliteBook Revolve 810 G2</a>
+        <div class="price-cart-row">
+          <div class="price-group">
+            <span class="price-discounted">$2,100.00</span>
+            <span class="old-price">$2,299.00</span>
+          </div>
+          <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+
+      <!-- Product 3 (Black Price) -->
+      <div class="product-card small-card">
+        <img src="5.webp" alt="Headphones">
+        <div class="category">Accessories, Headphones</div>
+        <a href="#" class="title">White Solo 2 Wireless</a>
+        <div class="price-cart-row">
+          <span class="price-regular">$248.99</span>
+          <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+
+      <!-- Product 4 (Red Discounted Price) -->
+      <div class="product-card small-card">
+        <img src="1.webp" alt="Smartphone">
+        <div class="category">Smart Phones & Tablets</div>
+        <a href="#" class="title">Smartphone 6S 32GB LTE</a>
+        <div class="price-cart-row">
+          <div class="price-group">
+            <span class="price-discounted">$1,100.00</span>
+            <span class="old-price">$1,215.00</span>
+          </div>
+          <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+
+      <!-- Product 5 (Black Price) -->
+      <div class="product-card small-card">
+        <img src="7.webp" alt="Camera">
+        <div class="category">Cameras, Cameras & Photography</div>
+        <a href="#" class="title">Purple NX Mini F1 aparat SMART NX</a>
+        <div class="price-cart-row">
+          <span class="price-regular">$559.00</span>
+          <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+
+      <!-- Product 6 (Black Price) -->
+      <div class="product-card small-card">
+        <img src="8.webp" alt="Printer">
+        <div class="category">Printers, Printers & Ink</div>
+        <a href="#" class="title">Full Color LaserJet Pro M452dn</a>
+        <div class="price-cart-row">
+          <span class="price-regular">$1,050.00</span>
+          <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+ 
+
+
+
+
+
+<section class="product-grid-section">
+  <div class="product-container">
+    
+    <!-- LEFT COLUMN (2 Small Vertical Cards) -->
+    <div class="product-column">
+      
+      <!-- Card 1 -->
+      <div class="product-card small-card">
+        <div class="product-info">
+          <span class="category">Accessories, Power Banks</span>
+          <h3 class="product-title"><a href="#">Powerbank 1130 mAh Blue</a></h3>
+        </div>
+        <div class="product-image">
+          <img src="44.webp" alt="Powerbank">
+        </div>
+        <div class="card-bottom">
+          <div class="price-container">
+            <span class="current-price">$200.00</span>
+            <span class="old-price">$210.00</span>
+          </div>
+          <button class="cart-btn" aria-label="Add to cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
+        <div class="card-hover-actions">
+          <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+          <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card small-card">
+        <div class="product-info">
+          <span class="category">Laptops, Laptops & Computers</span>
+          <h3 class="product-title"><a href="#">Laptop Screener CX70 2QF-621XPL 17.3" 4210</a></h3>
+        </div>
+        <div class="product-image">
+          <img src="55.webp" alt="Laptop">
+        </div>
+        <div class="card-bottom">
+          <div class="price-container">
+            <span class="current-price">$2,399.00</span>
+          </div>
+          <button class="cart-btn" aria-label="Add to cart">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="card-hover-actions">
+          <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+          <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CENTER COLUMN (Featured Controller Card) -->
+    <div class="product-column center-column">
+      <div class="product-card featured-card">
+        <div class="featured-info">
+          <span class="category">Game Consoles, Video Games & Consoles</span>
+          <h2 class="product-title featured-title"><a href="#">Game Console Controller + USB 3.0 Cable</a></h2>
+        </div>
+        
+        <div class="featured-image">
+          <img src="66.webp" alt="Game Console Controller">
+        </div>
+
+        <!-- Fixed Gallery Thumbnails -->
+        <div class="gallery-thumbnails">
+          <div class="thumb-box active"><img src="77.webp" alt="Thumb 1"></div>
+          <div class="thumb-box"><img src="88.webp" alt="Thumb 2"></div>
+          <div class="thumb-box"><img src="99.webp" alt="Thumb 3"></div>
+        </div>
+
+        <div class="card-bottom featured-bottom">
+          <div class="price-container">
+            <span class="current-price featured-price">$90.00</span>
+            <span class="old-price">$99.00</span>
+          </div>
+          <button class="add-to-cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i> Add to cart
+          </button>
+        </div>
+
+        <div class="card-hover-actions featured-hover-actions">
+          <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+          <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN (2 Small Vertical Cards) -->
+    <div class="product-column">
+      
+      <!-- Card 3 -->
+     <div class="product-card small-card">
+  <div class="product-info">
+    <span class="category">Computer Cases, Computer Components</span>
+    <h3 class="product-title"><a href="#">Aerocool ENS2377 Dead Silence Gaming Cube Case</a></h3>
+  </div>
+  
+  <div class="product-image">
+    <img src="00.webp" alt="Gaming Case">
+  </div>
+  
+  <div class="card-bottom">
+    <div class="price-container">
+      <span class="current-price">$150.00</span>
+      <span class="old-price">$180.00</span>
+    </div>
+    <button class="cart-btn" aria-label="Add to cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+  </div>
+
+  <!-- Updated Hover Actions Div -->
+  <div class="card-hover-actions">
+    <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+    <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+  </div>
+</div>
+      <!-- Card 4 -->
+      <div class="product-card small-card">
+        <div class="product-info">
+          <span class="category">Home Entertainment, TVs</span>
+          <h3 class="product-title"><a href="#">Widescreen 4K SUHD TV</a></h3>
+        </div>
+        <div class="product-image">
+          <img src="01.webp" alt="TV">
+        </div>
+        <div class="card-bottom">
+          <div class="price-container">
+            <span class="current-price">$3,299.00</span>
+          </div>
+          <button class="cart-btn" aria-label="Add to cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
+        <div class="card-hover-actions">
+          <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+          <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="bestsellers-section">
+  <div class="bestsellers-header">
+    <h2 class="section-title">Best Sellers</h2>
+    <a href="#" class="top-20-btn">Top 20</a>
+  </div>
+
+  <div class="bestsellers-grid">
+    
+    <!-- Card 1 -->
+    <div class="bestseller-card">
+      <div class="card-content">
+        <div class="product-image">
+          <img src="a.webp" alt="Game Console Controller">
+        </div>
+        <div class="product-details">
+          <span class="category">Game Consoles, Video Games &</span>
+          <h3 class="product-title"><a href="#">Game Console Controller + USB 3.0 Cable</a></h3>
+          <div class="card-price-row">
+            <div class="price-container">
+              <span class="current-price">$90.00</span>
+              <span class="old-price">$99.00</span>
+            </div>
+            <button class="cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover-actions">
+        <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+        <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bestseller-card">
+      <div class="card-content">
+        <div class="product-image">
+          <img src="b.webp" alt="Headphones Case">
+        </div>
+        <div class="product-details">
+          <span class="category">Accessories, Headphone Cases</span>
+          <h3 class="product-title"><a href="#">Universal Headphones Case in Black</a></h3>
+          <div class="card-price-row">
+            <div class="price-container">
+              <span class="current-price">$159.00</span>
+            </div>
+            <button class="cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover-actions">
+        <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+        <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bestseller-card">
+      <div class="card-content">
+        <div class="product-image">
+          <img src="c.webp" alt="Tablet Red EliteBook">
+        </div>
+        <div class="product-details">
+          <span class="category">Smart Phones & Tablets,</span>
+          <h3 class="product-title"><a href="#">Tablet Thin EliteBook Revolve 810 G6</a></h3>
+          <div class="card-price-row">
+            <div class="price-container">
+              <span class="current-price">$1,300.00</span>
+            </div>
+            <button class="cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover-actions">
+        <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+        <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bestseller-card">
+      <div class="card-content">
+        <div class="product-image">
+          <img src="d.webp" alt="Wireless Audio System">
+        </div>
+        <div class="product-details">
+          <span class="category">Audio Speakers, TV & Audio</span>
+          <h3 class="product-title"><a href="#">Wireless Audio System Multiroom 360</a></h3>
+          <div class="card-price-row">
+            <div class="price-container">
+              <span class="current-price">$2,299.00</span>
+            </div>
+            <button class="cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover-actions">
+        <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+        <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+      </div>
+    </div>
+
+    <!-- Card 5 (Featured Hovered state in design) -->
+    <div class="bestseller-card">
+      <div class="card-content">
+        <div class="product-image">
+          <img src="e.webp" alt="Tablet Red EliteBook G2">
+        </div>
+        <div class="product-details">
+          <span class="category">Laptops, Laptops & Computers,</span>
+          <h3 class="product-title"><a href="#">Tablet Red EliteBook Revolve 810 G2</a></h3>
+          <div class="card-price-row">
+            <div class="price-container">
+              <span class="current-price">$2,100.00</span>
+              <span class="old-price">$2,299.00</span>
+            </div>
+            <button class="cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover-actions">
+        <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+        <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="bestseller-card">
+      <div class="card-content">
+        <div class="product-image">
+          <img src="f.webp" alt="LaserJet Printer">
+        </div>
+        <div class="product-details">
+          <span class="category">Printers, Printers & Ink</span>
+          <h3 class="product-title"><a href="#">Full Color LaserJet Pro M452dn</a></h3>
+          <div class="card-price-row">
+            <div class="price-container">
+              <span class="current-price">$1,050.00</span>
+            </div>
+            <button class="cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card-hover-actions">
+        <a href="#" class="action-link"><i class="fa-regular fa-heart"></i> Wishlist</a>
+        <a href="#" class="action-link"><i class="fa-solid fa-arrows-rotate"></i> Compare</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div style="height:300px;background:#fafafa;display:flex;align-items:center;justify-content:center;color:#999;font-family:sans-serif;">
+  (Baaki page yahan aayega — product tabs, footer)
+</div>
+
+<script src="js/header.js"></script>
+<script src="js/hero-slider.js"></script>
+<script src="js/product-tab.js"></script>
+<script src="js/product.js"></script>
+
+
+</body>
+</html>
